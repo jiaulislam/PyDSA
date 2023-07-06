@@ -16,6 +16,7 @@ mypy = "^1.4.1"
 ruff = "^0.0.275"
 pre-commit = "^3.3.3"
 devtools = "^0.11.0"
+jupyter = "^1.0.0"
 
 
 [tool.poetry.group.test.dependencies]
@@ -39,31 +40,15 @@ ignore = [
     "E501",  # line too long, handled by black
     "B008",  # do not perform function calls in argument defaults
     "C901",  # too complex
+    "B018",  # ignore for ipynb
+    "F821",  # ignore for ipynb
 ]
-exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".git-rewrite",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".pytype",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "venv",
-    "./epay/tests"
+
+include = ["*.py", "**/pyproject.toml", "*.ipynb"]
+
+extend-exclude = [
+    ".pyenv"
 ]
 
 [tool.isort]
-known-third-party = ["fastapi", "python-dateutil", "python-dotenv", "oracledb", "num2words", "httpx", "pytz", "bcrypt"]
+known-third-party = ["pydantic"]
