@@ -9,6 +9,7 @@ packages = [{include = "dsa_algo_python"}]
 [tool.poetry.dependencies]
 python = ">=3.8"
 pydantic = "^1.10.9"
+jupyterlab = "^4.0.3"
 
 
 [tool.poetry.group.dev.dependencies]
