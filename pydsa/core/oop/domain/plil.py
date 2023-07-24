@@ -1,10 +1,9 @@
 import math
-from typing import Any
 from datetime import date, datetime
+from typing import Any
 
-from pydantic import BaseModel
 from enums import PaymodeEnum
-
+from pydantic import BaseModel
 
 
 class CommonAttributes(BaseModel):
